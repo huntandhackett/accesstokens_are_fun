@@ -1,5 +1,5 @@
 # About this repository
-Repository containing examples to play with access tokens and JWTs
+Repository containing examples to play with access tokens and JWTs 
 Link to blogpost: https://www.huntandhackett.com/blog/researching-access-tokens-for-fun-and-knowledge
 
 Repository contains 5 examples: 
