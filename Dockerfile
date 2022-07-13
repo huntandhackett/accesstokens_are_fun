@@ -17,6 +17,6 @@ ENV PS_INSTALL_FOLDER=/opt/microsoft/powershell/7-lts POWERSHELL_TELEMETRY_OPTOU
 #CMD ["pwsh"]
 RUN  pwsh -NoLogo -NoProfile -Command " \$ErrorActionPreference = 'Stop' ; \$ProgressPreference = 'SilentlyContinue' ; while(!(Test-Path -Path \$env:PSModuleAnalysisCachePath)) { Write-Host "'Waiting for $env:PSModuleAnalysisCachePath'" ; Start-Sleep -Seconds 6 ; }" 
 
-# Install AzureAD and MSAL modules
-RUN pwsh -NoLogo -NoProfile -Command 'Install-Module AzureAD -Force -Confirm:$false'
+# Install MSAL modules. ADAL does not work on .NET core
+# RUN pwsh -NoLogo -NoProfile -Command 'Install-Module AzureAD -Force -Confirm:$false'
 RUN pwsh -NoLogo -NoProfile -Command 'Install-Module MSAL.PS -Force -Confirm:$false'
